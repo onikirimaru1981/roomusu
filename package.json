@@ -1,0 +1,27 @@
+{
+  "name": "roomusu",
+  "version": "1.0.0",
+  "description": "Prueba tecnica erasmusu",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onikirimaru1981/roomusu.git"
+  },
+  "author": "antonioSantana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/onikirimaru1981/roomusu/issues"
+  },
+  "homepage": "https://github.com/onikirimaru1981/roomusu#readme",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "supervisor": "^0.12.0"
+  }
+}
