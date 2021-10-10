@@ -31,9 +31,10 @@
 
 ### - *Parametros:*
 
-* **orderFor**: Parametro por el que filtraremos la búsqueda.
-* **page**: Parametro por el que elegiremos pagina de resultados.
-* **limit**: Parametro por el que limitaremos Nº de resultados por página.
+* **orderFor**: Parámetro por el que filtraremos la búsqueda.
+* **page**: Parámetro por el que elegiremos pagina de resultados.
+* **limit**: Parámetro por el que limitaremos Nº de resultados por página.
+* **asc**: Parámetro por el que ordenaremos en orden ascendente/descendente los resultados que nos muestre la página.
 
 
 
