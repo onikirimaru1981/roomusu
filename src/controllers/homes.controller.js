@@ -15,18 +15,15 @@ const homesGet = async (req = request, res = response) => {
         const limit = req.query.limit;
         const asc = req.query.asc;
 
-        const homes = await new Home().getJson(orderFor, asc, page, limit);
+        const respHomes = Home.getJson(orderFor, asc, page, limit)
 
-        res.status(200).json({
-            msg: 'Listado de casas',
-            homes
-        });
+        res.status(200).send(respHomes);
 
     } catch (error) {
 
         res.status(401).json({
 
-            msg: `Error en peticion,pongase en contacto con el administrador`
+            msg: `Error en peticion,pongase en contacto con el administrador ${error}`
         });
 
     };
