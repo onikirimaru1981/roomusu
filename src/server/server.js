@@ -1,9 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const compression = require('compression')
+const compression = require('compression');
 const Home = require('../models/home');
-require('colors')
-
 
 class Server {
 
@@ -16,27 +14,22 @@ class Server {
         this.middlewares();
 
 
-        // inicializa modelo; metodo init del modelo es asincronio,y ya que en el contructor no puedo hacerlo async lo hago de esta manera
+        // inicializando metodo
         this.init();
 
         //Rutas de la aplicacion
         this.routes();
 
-    };
-    // Funcion para evitar tiempo de carga excesivo,por motivo de que el json de origen es de gran tamaño,consiguiendo que el archivo sea cargado
-    // una unica vez y su informacion sea almacenada en una variable con el metodo de la clase Home
+    }
+
     async init() {
-
-
         await Home.init()
-
-    };
-
+    }
 
     routes() {   // Middlewar condicional
 
         this.app.use(this.paths.homes, require('../routes/homes.routes'));
-    };
+    }
 
     middlewares() {
 
@@ -52,7 +45,7 @@ class Server {
 
         // Compressor 
 
-        this.app.use(compression())
+        this.app.use(compression());
 
         // Cambiar content type a application/json
 
@@ -71,7 +64,7 @@ class Server {
             console.log(`Conexion establecida corrrectamente en puerto:${process.env.PORT}`);
 
         });
-    };
+    }
 };
 
 module.exports = new Server();

@@ -28,7 +28,7 @@ class Home {
                 msg: `Error en peticion,pongase en contacto con el administrador ${error}`
             });
 
-        }
+        };
 
 
     }
@@ -58,11 +58,11 @@ class Home {
                 msg: `Error en peticion,pongase en contacto con el administrador ${error}`
             });
 
-        }
+        };
 
 
 
-    };
+    }
 
     sort_by_key(array, key) {
         return array.sort((a, b) => {
@@ -74,7 +74,7 @@ class Home {
 
     paginator(items, page, per_page) {
 
-        const pagina = page || 1,// Valores por defecto,de otra manera
+        const pagina = page || 1,// Valores por defecto de otra manera
             limit = per_page || 10,
             offset = (pagina - 1) * limit,
 
@@ -83,7 +83,7 @@ class Home {
         return paginatedItems
     }
 
-}
+};
 
 
 module.exports = new Home();

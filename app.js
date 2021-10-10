@@ -4,5 +4,5 @@ const Server = require("./src/server/server");
 
 
 
-Server.listen()
+Server.listen();
 

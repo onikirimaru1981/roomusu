@@ -1,7 +1,6 @@
 const { response, request } = require('express');
 const Home = require('../models/home');
 
-
 // Peticiones
 
 const homesGet = async (req = request, res = response) => {
@@ -15,7 +14,7 @@ const homesGet = async (req = request, res = response) => {
         const limit = req.query.limit;
         const asc = req.query.asc;
 
-        const respHomes = Home.getJson(orderFor, asc, page, limit)
+        const respHomes = Home.getJson(orderFor, asc, page, limit);
 
         res.status(200).send(respHomes);
 
