@@ -68,7 +68,7 @@ class Server {
 
     listen() {
         this.app.listen(this.port, () => {
-            console.log(`Conexion establecida corrrectamente en puerto: ${'http://localhost:'.red} ${this.port.yellow}`.green);
+            console.log(`Conexion establecida corrrectamente en puerto:${process.env.PORT}`);
 
         });
     };

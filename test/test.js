@@ -10,9 +10,9 @@ chai.should();
 chai.use(chaiHttp);
 
 describe('Test roomusu API', () => {
-    //   /api/homes ? orderFor = Address & page=1 & limit=2 & asc=1
+
     describe("Test GET route /api/homes", () => {
-        it("Debe devolver homes con params por defecto page=1&limit=10 ", (done) => {
+        it("Debe devolver resultado de homes con params por defecto page=1 & limit=10 & asc=1 ", (done) => {
             chai.request(server)
                 .get("/api/homes")
                 .end((err, response) => {
@@ -23,6 +23,65 @@ describe('Test roomusu API', () => {
                 });
         });
 
+
+    });
+
+
+    describe("Test GET route /", () => {
+        it("Debe devolver resultado de Homes con ruta raiz con params por defecto page=1 & limit=10 & asc=1 ", (done) => {
+            chai.request(server)
+                .get("/")
+            end((err, response) => {
+
+                response.should.have.status(200);
+                response.body.should.be.a('array');
+                response.body.length.should.not.be.eq(0);
+                done();
+            });
+        });
+
+    });
+
+    describe("Test GET route /api/homes? orderFor=Address & page=1 & limit=2 & asc=1", () => {
+        it("Debe devolver resultado de Homes filtrado en orden ascendente con params orderFor=Address & page=1 & limit=2 & asc=1 ", (done) => {
+            chai.request(server)
+                .get("/api/homes?orderFor=Address&page=1&limit=2&asc=1")
+            end((err, response) => {
+
+                response.should.have.status(200);
+                response.body.should.be.a('array');
+                response.body.length.should.not.be.eq(0);
+                done();
+            });
+        });
+
+    });
+    describe("Test GET route /api/homes? orderFor=Address & page=1 & limit=2 & asc=-1", () => {
+        it("Debe devolver resultado de Homes filtrado orden descendente con params orderFor=Address & page=1 & limit=2 & asc=-1 ", (done) => {
+            chai.request(server)
+                .get("/api/homes?orderFor=Address&page=1&limit=2&asc=1")
+            end((err, response) => {
+
+                response.should.have.status(200);
+                response.body.should.be.a('array');
+                response.body.length.should.not.be.eq(0);
+                done();
+            });
+        });
+
+    });
+    describe("Test GET route /api/homes? orderFor=Address ", () => {
+        it("Debe devolver resultado de Homes filtrado con params por defecto page=1 & limit=2 & asc=1  ", (done) => {
+            chai.request(server)
+                .get("/api/homes?orderFor=Address")
+            end((err, response) => {
+
+                response.should.have.status(200);
+                response.body.should.be.a('array');
+                response.body.length.should.not.be.eq(0);
+                done();
+            });
+        });
 
     });
 
