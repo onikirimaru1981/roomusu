@@ -66,11 +66,11 @@
 
 * **Problema**: Tiempo de carga excesivo en la respuesta del servidor para proveer los datos a la vista(4s aprox).
 
-* **Solución**: Implementar un singleton en el modelo Home,el cual sera llamado en el modelo del server para para evitar tiempo de carga excesivo,por motivo de que el json de origen es de gran tamaño,consiguiendo que el archivo sea cargado una unica vez y su informacion sea almacenada en una variable con el metodo init de la clase Home.
+* **Solución**: Implementar un singleton en el modelo Home,el cual sera llamado en el modelo del `server` para para evitar tiempo de carga excesivo,por motivo de que el json de origen es de gran tamaño,consiguiendo que el archivo sea cargado una unica vez y su informacion sea almacenada en una variable con el metodo `init()` de la clase `Home`.
 
-* **Problema**: Imposibilidad de utilizar el metodo que es asincrono dentro del contructor,ya que este no puede ser async.
+* **Problema**: Imposibilidad de utilizar el metodo `init()`que es asincrono dentro del contructor,ya que este no puede pasar a ser async.
 
-* **Solución**: Llamar al metodo init de la clase Home en el modelo del servidor,declarar este asincrono,y alojar la llamada de este en el contructor del servidor.
+* **Solución**: Llamar al metodo `init()` de la clase `Home` en el modelo del servidor,declarar este asincrono,y alojar la llamada del metodo en el contructor del servidor.
 
 
 # Despedida
