@@ -3,7 +3,7 @@ const Home = require('../models/home');
 
 // Peticiones
 
-const homesGet = async (req = request, res = response) => {
+ const homesGet = async (req = request, res = response) => {
 
     try {
 
